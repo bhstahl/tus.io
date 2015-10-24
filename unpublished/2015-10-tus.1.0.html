@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>tus 1.0 - Changing how the world does file uploading</title>
+
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/app-7a8e9cf841ff6e976836cd328c5589cd.css">
+    <link type="application/atom+xml" rel="alternate" href="http://tus.io/blog.atom" title="" />
+
+    <script src="//use.typekit.net/zgo3uyj.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    
+    
+    
+
+    <a href="https://github.com/tus">
+      <img class="ribbon" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+    </a>
+
+    <div class="wrapper">
+      <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="three columns">
+              <h3 class="logo">
+                <a href="/">
+                  
+                    <img src="/assets/img/favicon.png" class="shield" alt="tus.io" />
+                  
+
+                  <img src="/assets/img/tus7.png" alt="tus.io" />
+                </a>
+              </h3>
+            </div>
+
+            <div class="nine columns nav-container">
+              <a href="#" class="toggler">
+                <span class="hamburger">&#8801;</span>
+                <span class="cross">&#10005;</span>
+              </a>
+
+              <ul class="nav">
+                
+                  
+                  
+                  <li class="">
+                    <a href="/">Home</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/about.html">About</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/blog.html">Blog</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="http://shop.tus.io/collections/all">Shop</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/demo.html">Demo</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/protocols/resumable-upload.html">Protocol</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/implementations.html">Implementations</a>
+                  </li>
+                
+              </ul>
+
+              <div class="u-cf"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        
+        <div class="container">
+        
+
+          
+
+<div class="post">
+  <h2 class="post-title">
+    tus 1.0 - Changing how the world does file uploading
+  </h2>
+
+  <div class="post-info">
+    Published on <span class="date">October 23, 2013</span> by
+    <a class="author" href="http://twitter.com/kvz">
+      Kevin van Zonneveld
+    </a>
+  </div>
+
+  <div class="post-content">
+    <p>People want to share ever larger media files from their phones and desktops. Sometimes though, servers misbehave, mobile users switch to WiFi, and so the upload is interrupted.</p>
+
+<p>This is a bad user experience, especially in the middle of a 2GB upload on a poor connection. What’s worse, the longer an upload takes, the more it is exposed to poor connections.</p>
+
+<p>Uploads need to be retried from the start, if the user bothers at all.</p>
+
+<p>With media files getting bigger and networks staying fragile, we need a better way to handle these hiccups.</p>
+
+<h3 id="resumable-uploads">Resumable uploads</h3>
+
+<p>Decent network libraries implement retries, but ideally, the next attempt would pick up where the user left off, and upload only the remaining bytes.</p>
+
+<p>If that happens under the hood, the user might not even notice he had an interrupted connection as the total upload time is barely impacted.</p>
+
+<p>What’s more, if we could redesign this in such a way that we could send multiple file parts simultaneously, the upload becomes faster.</p>
+
+<p>Finally there are many areas in the world where the connections are so poor that restarting an upload from the beginning only let’s you transmit the first 20% before breaking again. In this case resuming where you left off is the <em>only</em> way you’ll ever be able to upload a big file.</p>
+
+<p>We need resumable uploads.</p>
+
+<h3 id="company-x-y-z-have-already-implemented-this">Company X, Y, Z have already implemented this</h3>
+
+<p>That’s the problem. While there are many implementations that offer resumable uploads, they all solve it in a different way. They’re bound to one language or use case. They’re not as thorough or interoperable as we’d like. They all speak different dialects. Some implementations support some other implementations, that’s as far as compatibility goes.</p>
+
+<p>Not remotely how an <em>open web</em> should work.</p>
+
+<p>Dropbox, Vimeo, Google, AWS all have their own APIs for uploading chunks. Some companies describe their API but make choices that are no good for general use, and offer no platform to contribute improvements. If we want to support anything beyond their use case, we’re on our own again - increasing fragmentation even further, and leaving resumable file uploads a luxury to enjoy at a few big companies, instead of a standard that everyone can enjoy.</p>
+
+<h3 id="tus">tus</h3>
+
+<p>tus is a protocol that’s community-owned, has been <a href="https://github.com/tus/tus-resumable-upload-protocol">grown</a> using nothing but GitHub, Markdown and a deep motivation for solving this problem once and for all, shared by a few passionate high profile developers.</p>
+
+<p>Over the course of two years, we’ve received suggestions from people working at
+<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3Avayam">Vimeo</a>,
+<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3Atechnoweenie">GitHub</a>,
+<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3ABaughn">Google</a>,
+and from the author of
+<a href="https://github.com/tus/tus.io/issues?q=mentions%3Ahintjens">ØMQ</a> and one of the authors of
+<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3Areschke">HTTP/1.1</a> and
+<a href="https://github.com/tus/tus-resumable-upload-protocol/issues?q=mentions%3Afelixge">Node.js</a>.</p>
+
+<p>It wasn’t easy finding consensus and at times we hit deadlocks, but in the past few months we’ve made good progress and we’re now happy to announce a finalized 1.0. tus is ready for the world to use.</p>
+
+<h3 id="example">Example</h3>
+
+<p>Let’s quickly look at an example how a simple back &amp; forth between a client and server that can speak tus 1.0 would look like:</p>
+
+<pre><code class="language-bash"># Client:
+&gt; POST /files HTTP/1.1
+&gt; Host: tus.example.org
+&gt; Content-Length: 0
+&gt; Entity-Length: 100
+&gt; TUS-Resumable: 1.0.0
+&gt; Metadata: filename d29ybGRfZG9taW5hdGlvbl9wbGFuLnBkZg==
+
+# Server:
+&lt; HTTP/1.1 201 Created
+&lt; Location: http://tus.example.org/files/24e533e02ec3bc40c387f1a0e460e216
+&lt; TUS-Resumable: 1.0.0
+
+# Client:
+&gt; PATCH /files/24e533e02ec3bc40c387f1a0e460e216 HTTP/1.1
+&gt; Host: tus.example.org
+&gt; Content-Type: application/offset+octet-stream
+&gt; Content-Length: 30
+&gt; Offset: 0
+&gt; TUS-Resumable: 1.0.0
+&gt;
+&gt; [first 30 bytes]
+
+# Server:
+&lt; HTTP/1.1 204 No Content
+&lt; TUS-Resumable: 1.0.0
+</code></pre>
+
+<p>Since tus is a layer on top of HTTP, it’s easy to reason about, inspect, extend, and deploy in existing projects and infra.</p>
+
+<h3 id="small-core-with-optional-extensions">Small core with optional extensions</h3>
+
+<p>The core of the protocol is lightweight, yet well documented and defines how this communication should go. On top of that, tus offers extensions such as Checksum, Expiration, Concatenation, that support different use cases, and are opt-in.</p>
+
+<p>To highlight one of the protocol’s extensions, Concatenation allows you to split a 100GB file in 20 parts of 5GB, upload them in parallel, and have the tus server stitch them together again. This makes uploads much faster by better utilizing the available bandwidth. As an extra advantage of this method, individual chunks are regular tus uploads and can profit from all of tus’ features such as retries, checksums, etc.</p>
+
+<h3 id="implementations">Implementations</h3>
+
+<p>Our aim is to support all major languages and platforms, and besides the protocol
+we develop many implemntations, so that developers can have drop-in self-hosted resumable
+file uploads at zero cost.</p>
+
+<p>Currently we’re supporting these platforms:</p>
+
+<ul>
+  <li><a href="https://github.com/tus/tusd">Server in Go</a></li>
+  <li><a href="https://github.com/tus/tus-node-server">Server in ES2015 JavaScript for Node.js</a></li>
+  <li><a href="https://github.com/tus/tus-js-client">Client in JavaScript</a></li>
+  <li><a href="https://github.com/tus/TUSKit">Client for iOS</a></li>
+  <li><a href="https://github.com/tus/tus-android-client">Client for Android</a></li>
+  <li><a href="https://github.com/tus/tus-java-client">Client in Java</a></li>
+</ul>
+
+<p>Additionally there are many community provided <a href="http://www.tus.io/implementations.html">implementations</a> in languages like
+<a href="https://github.com/picocandy/rubytus">Ruby</a>,
+<a href="https://github.com/vayam/tuspy">Python</a> and
+<a href="https://github.com/leblanc-simon/php-tus">PHP</a>.</p>
+
+<p>Quality implementations of the protocol licensed MIT, might be adopted in the <a href="https://github.com/tus">tus organization on GitHub</a>, making you an official contributor to the project.</p>
+
+<h3 id="releasing-10">Releasing 1.0</h3>
+
+<p>The news today is that we’ve launched 1.0 on GitHub by merging <a href="https://github.com/tus/tus-resumable-upload-protocol/pull/57">the 1.0 pull request</a>.</p>
+
+<p>We consider the protocol stable and ready for production.</p>
+
+<h3 id="early-adopters">Early adopters</h3>
+
+<p>Early adopters <a href="https://vimeo.com">Vimeo</a> and Transloadit have already announced the use of tus 1.0 as their main protocol for uploading.</p>
+
+<p>tus is started and funded by <a href="https://transloadit.com">Transloadit</a>, but it’s community owned, and this will never change.</p>
+
+<p>We encourage anybody who deals with file uploads to have have a look at tus and think about using it for your next release.</p>
+
+<blockquote>
+  <p>Co-written by <a href="https://transloadit.com/about#marius">Marius</a></p>
+</blockquote>
+
+<p>» Comment on <a href="##############">Hacker News</a></p>
+
+  </div>
+</div>
+
+<div class="post-subscribe">
+  Subscribe to this blog via
+  <a href="">RSS</a>.
+</div>
+<!-- or
+@todo(felixge) Hook in feedburner
+<a href="http://tus.io/atom.xml?email=true">E-Mail</a>. -->
+
+
+        
+        </div>
+        
+      </div>
+
+      
+    </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3306079-17']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <script type="text/javascript">
+      window.tusdEndpoint = '';
+    </script>
+
+    <script src="/assets/app-90d42af6e40eb37401b2f14866d1e043.js"></script>
+
+  </body>
+</html>

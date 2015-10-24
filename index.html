@@ -1,0 +1,445 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Resumable File Uploads</title>
+
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/app-7a8e9cf841ff6e976836cd328c5589cd.css">
+    <link type="application/atom+xml" rel="alternate" href="http://tus.io/blog.atom" title="" />
+
+    <script src="//use.typekit.net/zgo3uyj.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    
+    
+    
+
+    <a href="https://github.com/tus">
+      <img class="ribbon" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+    </a>
+
+    <div class="wrapper">
+      <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="three columns">
+              <h3 class="logo">
+                <a href="/">
+                  
+                  
+
+                  <img src="/assets/img/tus7.png" alt="tus.io" />
+                </a>
+              </h3>
+            </div>
+
+            <div class="nine columns nav-container">
+              <a href="#" class="toggler">
+                <span class="hamburger">&#8801;</span>
+                <span class="cross">&#10005;</span>
+              </a>
+
+              <ul class="nav">
+                
+                  
+                  
+                    
+                  
+                  <li class="active">
+                    <a href="/">Home</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/about.html">About</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/blog.html">Blog</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="http://shop.tus.io/collections/all">Shop</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/demo.html">Demo</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/protocols/resumable-upload.html">Protocol</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a href="/implementations.html">Implementations</a>
+                  </li>
+                
+              </ul>
+
+              <div class="u-cf"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        
+
+          <div class="intro">
+  <div class="container">
+    <img class="banner" src="/assets/img/tus1.png" alt="Tus - Resumable File Uploads" />
+  </div>
+
+  <div class="mission">
+    <div class="container">
+      <p>
+        Users want to share more and more photos and videos. But mobile networks
+        are fragile. Platform APIs are a mess. Every project builds its own file
+        uploader. A thousand one week projects that barely work, when all we need
+        is one real project, done right.
+      </p>
+
+      <p>
+        We are going to do this right. We will solve reliable file uploads for once
+        and for all. A new open
+        <a href="/protocols/resumable-upload.html">protocol for resumable uploads</a>
+        built on HTTP. Simple, cheap, reusable stacks for clients and servers.
+        Any language, any platform, any network.
+      </p>
+
+      <p>
+        It's probably an impossible dream. No-one has managed yet.
+        But we're going to give it our best shot.
+        <a target="" href="https://github.com/tus">Join us on GitHub</a> and
+        help us make the world a better place. No more lost cat videos!
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    
+    
+    <section class="four columns feature">
+      <h5>HTTP-based</h5>
+      <div><p>Built as a layer on top of the popular HTTP protocol, tus can be easily integrated
+into applications using existing libraries, proxies, and firewalls, and can
+be used directly from any website.</p>
+</div>
+    </section>
+    
+    
+    <section class="four columns feature">
+      <h5>Production-ready</h5>
+      <div><p>tus can be considered ready for use in production and has completed numerous
+rounds of improvements and feedback from people working at Vimeo, Google
+and multiple other known companies.</p>
+</div>
+    </section>
+    
+    
+    <section class="four columns feature">
+      <h5>Open source</h5>
+      <div><p>The source code to all of our implementations, this website and even the protocol
+itself is accessible to everyone under MIT license, right from our
+<a href="https://github.com/tus">GitHub</a> organization.</p>
+</div>
+    </section>
+    
+    
+  </div>
+  <div class="row">
+    
+    <section class="four columns feature">
+      <h5>Minimalistic design...</h5>
+      <div><p>The specification only requires a very small set of features to be
+implemented by clients and servers, embracing simplicity and fast
+development and iteration speed for everyone.</p>
+</div>
+    </section>
+    
+    
+    <section class="four columns feature">
+      <h5>... and still extensible</h5>
+      <div><p>tus still features an extensive list of extensions introducing additional
+functionality, including parallel uploading, checksums and expiration,
+which can be implemented voluntarily.</p>
+</div>
+    </section>
+    
+    
+    <section class="four columns feature">
+      <h5>Community-owned</h5>
+      <div><p>We believe in an open and accessible evolution of this protocol. At any
+stage and since the beginning of tus, feedback has been appreciated and
+integrated. Your contributions are awaited.</p>
+</div>
+    </section>
+    
+  </div>
+</div>
+
+<div class="container">
+  <h2>Official implementations</h2>
+
+  <div class="row">
+    
+    
+    <div class="two columns offset-by-one column implementation">
+    
+      <a href="https://github.com/tus/tus-js-client">
+        <img src="/assets/img/prog-js01.svg" alt="Icon" />
+
+        tus-js-client
+      </a>
+    </div>
+    
+    
+    <div class="two columns implementation">
+    
+      <a href="https://github.com/tus/tus-java-client">
+        <img src="/assets/img/prog-java.svg" alt="Icon" />
+
+        tus-java-client
+      </a>
+    </div>
+    
+    
+    <div class="two columns implementation">
+    
+      <a href="https://github.com/tus/tus-android-client">
+        <img src="/assets/img/android.svg" alt="Icon" />
+
+        tus-android-client
+      </a>
+    </div>
+    
+    
+    <div class="two columns implementation">
+    
+      <a href="https://github.com/tus/TUSKit">
+        <img src="/assets/img/os-ios.svg" alt="Icon" />
+
+        TUSKit
+      </a>
+    </div>
+    
+    
+    <div class="two columns implementation">
+    
+      <a href="https://github.com/tus/tusd">
+        <img src="/assets/img/prog-golang02.svg" alt="Icon" />
+
+        tusd
+      </a>
+    </div>
+    
+  </div>
+
+  <p class="implementations-link">
+    Additionally, there are many <a href="/implementations.html">projects</a> built
+    and maintained by our community.
+  </p>
+</div>
+
+<div class="container">
+  <h2>Recent blog posts</h2>
+
+  <ol class="posts">
+    
+    
+    <li>
+      <div class="author">
+        <a href="http://twitter.com/kvz" title="Kevin van Zonneveld">
+          <img
+            src="https://secure.gravatar.com/avatar/3210e1be3e4059b93c4a88309e2183a2&s=64"
+            class="gravatar"
+            alt="Kevin van Zonneveld">
+        </a>
+      </div>
+
+      <div class="post-title">
+        <div class="date">
+          Sep 19, 2015
+        </div>
+
+        <h3>
+          <a href="/blog/2015/09/19/project-status">Project Status</a>
+        </h3>
+      </div>
+    </li>
+    
+    
+    <li>
+      <div class="author">
+        <a href="http://twitter.com/acconut_" title="Marius Kleidl">
+          <img
+            src="https://secure.gravatar.com/avatar/cda1e4d36e22cbcd826f0f09f8c19f04&s=64"
+            class="gravatar"
+            alt="Marius Kleidl">
+        </a>
+      </div>
+
+      <div class="post-title">
+        <div class="date">
+          Feb  3, 2015
+        </div>
+
+        <h3>
+          <a href="/blog/2015/02/03/protocol-v1.0.0-prerelease">Protocol v1.0.0 Prerelease</a>
+        </h3>
+      </div>
+    </li>
+    
+    
+    <li>
+      <div class="author">
+        <a href="http://twitter.com/asyncme" title="Naren Venkataraman">
+          <img
+            src="https://secure.gravatar.com/avatar/3b5a456c814b3235a7f0bffa27406022&s=64"
+            class="gravatar"
+            alt="Naren Venkataraman">
+        </a>
+      </div>
+
+      <div class="post-title">
+        <div class="date">
+          Jan 26, 2014
+        </div>
+
+        <h3>
+          <a href="/blog/2014/01/26/protocol-v0.2.2">Protocol v0.2.2</a>
+        </h3>
+      </div>
+    </li>
+    
+  </ol>
+</div>
+
+
+<div class="container logos">
+  <h2>Who's using tus?</h2>
+
+  <div class="row">
+    
+      
+      
+      
+
+      <div class="four columns offset-by-zero column">
+        <a href="https://transloadit.com"><img src="/assets/img/logos/transloadit.png" alt="Transloadit"></a>
+      </div>
+      
+    
+      
+      
+      
+
+      <div class="four columns ">
+        <a href="https://vimeo.com"><img src="/assets/img/logos/vimeo.png" alt="Vimeo"></a>
+      </div>
+      
+    
+      
+      
+      
+
+      <div class="four columns ">
+        <a href="http://hotpointapp.com"><img src="/assets/img/logos/hotpoint.png" alt="Hotpoint"></a>
+      </div>
+      </div><div class="row">
+    
+  </div>
+
+  <div class="row">
+    <p class="companies-link" markdown="1">
+      Do you (plan to) use tus?
+      <a href="https://github.com/tus/tus.io/edit/master/_data/logos.yml">Add your company</a>
+    </p>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="on-the-githubs-container">
+    <h2>On the GitHubs</h2>
+
+    <div class="on-the-githubs" data-event-source="orgs/tus">
+      Loading...
+    </div>
+  </div>
+</div>
+
+<div class="subscription-form">
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h3>Get latest news and updates!</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="six columns">
+        <p>
+          Leave your e-mail to receive infrequent e-mails about
+          major releases and announcements.
+        </p>
+      </div>
+
+      <div class="six columns">
+        <form action="http://transloadit.us1.list-manage1.com/subscribe/post?u=98e560c614f2baaf47237f500&amp;id=37aafbe5c1" method="post">
+          <input name="EMAIL" type="email" placeholder="Your e-mail address..."/>
+          <input name="SOURCE" type="hidden" value="tus.io"/>
+          <button class="button-primary">Subscribe!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        
+      </div>
+
+      
+    </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3306079-17']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <script type="text/javascript">
+      window.tusdEndpoint = '';
+    </script>
+
+    <script src="/assets/app-90d42af6e40eb37401b2f14866d1e043.js"></script>
+
+  </body>
+</html>

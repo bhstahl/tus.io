@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<generator uri="http://jekyllrb.com" version="2.5.2">Jekyll</generator>
+<link href="http://tus.io/blog.atom" rel="self" type="application/atom+xml" />
+<link href="http://tus.io/" rel="alternate" type="text/html" />
+<updated>2015-10-24T22:45:30+02:00</updated>
+<id>http://tus.io/</id>
+<entry>
+<title>Project Status</title>
+<link href="http://tus.io/blog/2015/09/19/project-status" rel="alternate" type="text/html" title="Project Status" />
+<published>2015-09-19T00:00:00+02:00</published>
+<updated>2015-09-19T00:00:00+02:00</updated>
+<id>http://tus.io/blog/2015/09/19/project-status</id>
+<content type="html" xml:base="http://tus.io/blog/2015/09/19/project-status">&lt;p&gt;Here’s a quick update on the status of the project.&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;1.0&lt;/h3&gt;
+
+&lt;p&gt;We’re finalizing 1.0. Our project
+lead &lt;a href=&quot;https://github.com/Acconut&quot;&gt;Marius Kleidl&lt;/a&gt; has been taking care
+of integrating a large batch of improvements
+that were made by Vimeo’s &lt;a href=&quot;https://github.com/vayam&quot;&gt;Naren Venkataraman&lt;/a&gt; and this team.&lt;/p&gt;
+
+&lt;p&gt;Things still left to do:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/issues/59&quot;&gt;Write a Developers Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Gather a &lt;em&gt;final round of feedback&lt;/em&gt; on &lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/pull/57&quot;&gt;the 1.0 proposal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We’re waiting for a &lt;em&gt;final round of feedback&lt;/em&gt; to make sure every last bit
+is taken care of before cementing everything into our first stable release.&lt;/p&gt;
+
+&lt;h3 id=&quot;exposure--swag&quot;&gt;Exposure &amp;amp; Swag&lt;/h3&gt;
+
+&lt;p&gt;To make sure every developer and interested party had their change to chime in,
+we’re trying to get some extra exposure for the project. We’ll be covered
+in the upcoming &lt;a href=&quot;https://changelog.com/&quot;&gt;Changelog&lt;/a&gt; and Transloadit
+is sponsoring conferences to hand out swag and raise tus awareness.&lt;/p&gt;
+
+&lt;p&gt;Swag is also for sale at the new &lt;a href=&quot;http://shop.tus.io/collections/all&quot;&gt;shop.tus.io&lt;/a&gt;. The shop
+currently only features two, pretty expensive, items and we’re working with &lt;a href=&quot;https://www.theprintful.com/&quot;&gt;Printful&lt;/a&gt; to improve on that.
+Know that any profit flows back to the project and our books are open to
+anyone who wants to verify.&lt;/p&gt;
+
+&lt;h3 id=&quot;implementations&quot;&gt;Implementations&lt;/h3&gt;
+
+&lt;p&gt;While 1.0 could potentially still be changed, we don’t expect major changes
+so our official implementations have already been made 1.0 compatible.&lt;/p&gt;
+
+&lt;p&gt;All official projects have been updated to the 1.0 branch already
+for which a big thank you goes out to &lt;a href=&quot;https://github.com/MMasterson&quot;&gt;Mark R. Masterson&lt;/a&gt;
+and Marius who upgraded all of our implementations.&lt;/p&gt;
+
+&lt;p&gt;Marius also added Android and
+standalone Java implementations as official tus projects, and replaced our jQuery
+implementation with a standalone &lt;a href=&quot;https://github.com/tus/tus-js-client&quot;&gt;tus-js-client&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you’re interested in building &amp;amp; maintaining new 1.0 implementations, becoming
+a member of tus core, leave a note here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/issues/67&quot;&gt;More 1.0 implementations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;design&quot;&gt;Design&lt;/h3&gt;
+
+&lt;p&gt;The whole site has been given a new layout by &lt;a href=&quot;https://github.com/fahad19&quot;&gt;Fahad Ibnay Heylaal&lt;/a&gt; and
+a completely new logo was designed by &lt;a href=&quot;https://twitter.com/milan_vuckovic&quot;&gt;Milan Vuckovic&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We’re currently working on improving other:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/tus.io/issues&quot;&gt;Design issues&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;demo&quot;&gt;Demo&lt;/h3&gt;
+
+&lt;p&gt;Since the first publication of the tus protocol, our website featured a
+&lt;a href=&quot;/demo.html&quot;&gt;demo page&lt;/a&gt; allowing users to see a tus in action, interactively.
+In the past this service had some issues with reliability and browser-support.
+Because of this past, we updated the entire stack used by the demo.&lt;/p&gt;
+
+&lt;p&gt;It now uses our newly created &lt;a href=&quot;https://github.com/tus/tus-js-client&quot;&gt;tus-js-client&lt;/a&gt;
+and we’ve updated the demo page to feature all the browsers &amp;amp; platforms the
+client has been tested to work on.
+The demo page uploads files to a &lt;a href=&quot;https://github.com/tus/tusd&quot;&gt;tusd 1.0&lt;/a&gt;
+server written in Go, that we deploy via the newly created
+&lt;a href=&quot;https://github.com/tus/infra-tusd&quot;&gt;infra-tusd&lt;/a&gt; repository.&lt;/p&gt;
+
+&lt;h3 id=&quot;infra&quot;&gt;Infra&lt;/h3&gt;
+
+&lt;p&gt;Still a work in progress, &lt;a href=&quot;https://github.com/tus/infra-tusd&quot;&gt;infra-tusd&lt;/a&gt;
+uses a powerful combination of &lt;a href=&quot;http://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt; and
+&lt;a href=&quot;https://terraform.io/&quot;&gt;Terraform&lt;/a&gt; to
+spin up fully functioning tus servers with a single command. Every bit
+(except for the AWS &amp;amp; SSH keys) has been added to the repository
+and is publicly available.&lt;/p&gt;
+
+&lt;p&gt;Please each out if you’d like to help us:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/infra-tusd/issues/1&quot;&gt;Add local Vagrant support for testing the Ansible scripts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;adoption&quot;&gt;Adoption&lt;/h3&gt;
+
+&lt;p&gt;Finally, a few big companies have taken an interest
+in tus. tus will always remain open source and community owned, but
+we’re excited that we’re on the path to realizing our mission to
+change how the world does file uploading.&lt;/p&gt;
+
+&lt;p&gt;We’ll have more announcements on this soon!&lt;/p&gt;
+
+&lt;p&gt;If you (plan to) use tus in production, please comment on this issue and get your
+company listed on the tus.io website:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tus/tus.io/issues/28&quot;&gt;Companies that (plan to) use tus&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+<author>
+<name>kvz</name>
+</author>
+<summary>Here&amp;#8217;s a quick update on the status of the project.</summary>
+</entry>
+<entry>
+<title>Protocol v1.0.0 Prerelease</title>
+<link href="http://tus.io/blog/2015/02/03/protocol-v1.0.0-prerelease" rel="alternate" type="text/html" title="Protocol v1.0.0 Prerelease" />
+<published>2015-02-03T20:33:00+01:00</published>
+<updated>2015-02-03T20:33:00+01:00</updated>
+<id>http://tus.io/blog/2015/02/03/protocol-v1.0.0-prerelease</id>
+<content type="html" xml:base="http://tus.io/blog/2015/02/03/protocol-v1.0.0-prerelease">&lt;p&gt;More than a year ago the last release, &lt;code&gt;0.2.2&lt;/code&gt; was published. Now the final 1.0
+release is just around the corner introducing breaking changes and a lot of new
+features.&lt;/p&gt;
+
+&lt;p&gt;The major changes towards the core include the addition of the &lt;code&gt;TUS-Resumable&lt;/code&gt;,
+&lt;code&gt;TUS-Max-Size&lt;/code&gt;, &lt;code&gt;TUS-Extension&lt;/code&gt; and &lt;code&gt;TUS-Version&lt;/code&gt; headers while making the first
+one mandatory. All these headers must be returned in the new &lt;code&gt;OPTIONS&lt;/code&gt; request
+in order to enable protocol discovery. In addition the &lt;code&gt;Offset&lt;/code&gt; header must not
+be greater or lower than the current offset for the file.&lt;/p&gt;
+
+&lt;p&gt;The biggest changes were made by introducing the Upload-Expiration,  Checksum,
+Stream, Retries, Termination, Merge and Metadata extensions.&lt;/p&gt;
+
+&lt;p&gt;After all of this work the protocol is now considered stable and ready for use
+in production environments. Speaking of implementations the official
+&lt;a href=&quot;https://github.com/tus/tus-jquery-client/tree/1.0&quot;&gt;&lt;code&gt;tus-jquery-client&lt;/code&gt;&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/tus/tusd/tree/neXT&quot;&gt;&lt;code&gt;tusd&lt;/code&gt;&lt;/a&gt; repositories are currently being
+updated to support the 1.0 release.&lt;/p&gt;
+
+&lt;p&gt;The final 1.0 Release will be published by merging the
+&lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/pull/57&quot;&gt;according pull request&lt;/a&gt;
+on GitHub once these changes are done. Furthermore, last feedback may be
+submitted there to adjust minor things.&lt;/p&gt;
+</content>
+<author>
+<name>acconut</name>
+</author>
+<summary>More than a year ago the last release, 0.2.2 was published. Now the final 1.0release is just around the corner introducing breaking changes and a lot of newfeatures.</summary>
+</entry>
+<entry>
+<title>Protocol v0.2.2</title>
+<link href="http://tus.io/blog/2014/01/26/protocol-v0.2.2" rel="alternate" type="text/html" title="Protocol v0.2.2" />
+<published>2014-01-26T10:04:45+01:00</published>
+<updated>2014-01-26T10:04:45+01:00</updated>
+<id>http://tus.io/blog/2014/01/26/protocol-v0.2.2</id>
+<content type="html" xml:base="http://tus.io/blog/2014/01/26/protocol-v0.2.2">&lt;p&gt;This is a minor protocol release:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add Content-Type to PATCH example.(&lt;a href=&quot;https://github.com/vayam&quot;&gt;Naren Venkataraman&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;s/Final-Length/Entity-Length/g (&lt;a href=&quot;https://github.com/felixge&quot;&gt;Felix Geisendörfer&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Fix &lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/pull/32&quot;&gt;#31&lt;/a&gt;:
+HEAD request with non-existent resources should return 404 or 403. (&lt;a href=&quot;https://github.com/vayam&quot;&gt;Naren
+Venkataraman&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All patches can be seen &lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/compare/v0.2.1...v0.2.2&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content>
+<author>
+<name>vayam</name>
+</author>
+<summary>This is a minor protocol release:</summary>
+</entry>
+<entry>
+<title>Protocol v0.2.1</title>
+<link href="http://tus.io/blog/2013/05/08/protocol-v0.2.1" rel="alternate" type="text/html" title="Protocol v0.2.1" />
+<published>2013-05-08T18:42:00+02:00</published>
+<updated>2013-05-08T18:42:00+02:00</updated>
+<id>http://tus.io/blog/2013/05/08/protocol-v0.2.1</id>
+<content type="html" xml:base="http://tus.io/blog/2013/05/08/protocol-v0.2.1">&lt;p&gt;This is a minor protocol release:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Fix &lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/pull/19&quot;&gt;#19&lt;/a&gt;:
+Final-Length header was called Final-Size in one place by accident. (&lt;a href=&quot;https://github.com/vayam&quot;&gt;Naren
+Venkataraman&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Define that PATCH requests MUST use &lt;code&gt;application/offset+octet-stream&lt;/code&gt; as the
+&lt;code&gt;Content-Type&lt;/code&gt;. (&lt;a href=&quot;https://github.com/felixge&quot;&gt;Felix Geisendörfer&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Define that &lt;code&gt;Final-Length&lt;/code&gt; values MUST NOT be negative. (&lt;a href=&quot;https://github.com/felixge&quot;&gt;Felix
+Geisendörfer&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All patches can be seen &lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/compare/v0.2...v0.2.1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content>
+<author>
+<name>felixge</name>
+</author>
+<summary>This is a minor protocol release:</summary>
+</entry>
+<entry>
+<title>Protocol v0.2</title>
+<link href="http://tus.io/blog/2013/05/01/protocol-v0.2" rel="alternate" type="text/html" title="Protocol v0.2" />
+<published>2013-05-01T02:35:00+02:00</published>
+<updated>2013-05-01T02:35:00+02:00</updated>
+<id>http://tus.io/blog/2013/05/01/protocol-v0.2</id>
+<content type="html" xml:base="http://tus.io/blog/2013/05/01/protocol-v0.2">&lt;p&gt;After releasing our first draft a few weeks ago, we received an incredible
+amount of feedback and suggestions. Based on this feedback as well as
+&lt;a href=&quot;http://lists.w3.org/Archives/Public/ietf-http-wg/2013AprJun/0155.html&quot;&gt;discussing&lt;/a&gt;
+the problems with the &lt;a href=&quot;http://trac.tools.ietf.org/wg/httpbis/trac/wiki&quot;&gt;IETF HTTPbis Working
+Group&lt;/a&gt;, we identified a few
+key issues with &lt;a href=&quot;https://github.com/tus/tus-resumable-upload-protocol/blob/v0.1/README.md&quot;&gt;v0.1&lt;/a&gt; of the
+protocol:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;PUT&lt;/code&gt; requests are not appropiate for transfering partial resources&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;Content-Range&lt;/code&gt; and &lt;code&gt;Range&lt;/code&gt; headers are not meant for resuming an
+interrupted resource transfer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After lots of careful thinking, we came up with a new approach that uses:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;PATCH&lt;/code&gt; instead of &lt;code&gt;PUT&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;A new &lt;code&gt;Offset&lt;/code&gt; header used by &lt;code&gt;HEAD&lt;/code&gt; responses and &lt;code&gt;PATCH&lt;/code&gt; requests alike&lt;/li&gt;
+  &lt;li&gt;A &lt;code&gt;Final-Length&lt;/code&gt; header to provide the final file size to the server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We also split the protocol into a core protocol which takes care of
+resumability, and nothing else, as well as optional protocol extensions.&lt;/p&gt;
+
+&lt;p&gt;The result of this has just been published as v0.2 can be seen on the &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;protocol
+page&lt;/a&gt;. Also included is a new &lt;a href=&quot;/protocols/resumable-upload.html#7&quot;&gt;FAQ
+section&lt;/a&gt; which will expanded over time.&lt;/p&gt;
+
+&lt;p&gt;We feel that the overall result is a drastic simplification of the problem down
+to its essence, and we encourage interested developers to implement prototypes.&lt;/p&gt;
+
+&lt;p&gt;Our next step is upgrading tusd, the jquery client and the ios client to the
+new protocol version. Once the protocol has reached a little more maturity, we
+are also thinking about providing an executable protocol verification tool for
+implementers.&lt;/p&gt;
+</content>
+<author>
+<name>felixge</name>
+</author>
+<summary>After releasing our first draft a few weeks ago, we received an incredibleamount of feedback and suggestions. Based on this feedback as well asdiscussingthe problems with the IETF HTTPbis WorkingGroup, we identified a fewkey issues with v0.1 of theprotocol:</summary>
+</entry>
+<entry>
+<title>A protocol for resumable file uploads</title>
+<link href="http://tus.io/blog/2013/04/15/a-protocol-for-resumable-file-uploads" rel="alternate" type="text/html" title="A protocol for resumable file uploads" />
+<published>2013-04-15T17:00:00+02:00</published>
+<updated>2013-04-15T17:00:00+02:00</updated>
+<id>http://tus.io/blog/2013/04/15/a-protocol-for-resumable-file-uploads</id>
+<content type="html" xml:base="http://tus.io/blog/2013/04/15/a-protocol-for-resumable-file-uploads">&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; We are happy to announce version 0.1 of the &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;tus resumable upload
+protocol&lt;/a&gt; and are interested in your
+feedback!&lt;/p&gt;
+
+&lt;p&gt;With mobile devices becoming the dominant source of user generated media files,
+reliable file uploading through unreliable mobile networks has become an
+important issue for anybody interested in content acquisition.&lt;/p&gt;
+
+&lt;p&gt;Reliability here means the ability to detect network errors, and resuming an
+upload without having to start from the beginning. In many scenarios this can
+mean the difference between a file reaching your application, or the user
+giving up in frustration.&lt;/p&gt;
+
+&lt;p&gt;Ideally, this should be a trivial feature to add. In reality however, there is
+quite a lack of solutions in this space. Sure, there are a few JavaScript
+libraries that claim to support resumable uploading, but in reality you will
+end up spending a lot of time coming up with your own API for it, or
+implementing a poorly specified one specific to a library. This is incredibly
+frustrating, especially if you are planning to support this feature on multiple
+platforms such as HTML5, iOS and Android.&lt;/p&gt;
+
+&lt;p&gt;Now, if you’re a big company like Google, you may sit down and create such a
+protocol for your needs. And in fact, Google has been working on a &lt;a href=&quot;http://code.google.com/p/gears/wiki/ResumableHttpRequestsProposal&quot;&gt;such a
+protocol&lt;/a&gt;
+since 2010, for the now defunct Google Gears. The latest incarnation of this
+are two incompatible protocols for &lt;a href=&quot;https://developers.google.com/drive/manage-uploads&quot;&gt;Google
+Drive&lt;/a&gt; and
+&lt;a href=&quot;https://developers.google.com/youtube/v3/guides/using_resumable_upload_protocol&quot;&gt;YouTube&lt;/a&gt;.
+But unfortunately both of these protocols rely on a non-standard http status
+code (&lt;code&gt;308 Resume Incomplete&lt;/code&gt;), and are far from being generic enough for
+general adoption.&lt;/p&gt;
+
+&lt;p&gt;This means that smaller companies are currently doomed to invent, implement and
+maintain their own incompatible protocols and solutions for something that
+should be a trivial component of a modern application.&lt;/p&gt;
+
+&lt;p&gt;We find this unacceptable, so the &lt;a href=&quot;http://www.tus.io/&quot;&gt;tus project&lt;/a&gt; is a
+community project that was born in order to level the playing field and make
+resumable file uploading easy for anybody to implement.&lt;/p&gt;
+
+&lt;p&gt;Today we are happy to release version 0.1 of &lt;a href=&quot;/protocols/resumable-upload.html&quot;&gt;our
+protocol&lt;/a&gt;. Interested developers are
+encouraged to experiment with it, and we are very interested in any feedback
+you may have.&lt;/p&gt;
+
+&lt;p&gt;Later this week we will also release some initial clients for
+&lt;a href=&quot;https://github.com/tus/tus-jquery-client&quot;&gt;jQuery&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/tus/TUSKit&quot;&gt;iOS&lt;/a&gt;, so make sure to follow this blog
+and these repositories for future updates!&lt;/p&gt;
+</content>
+<author>
+<name>felixge</name>
+</author>
+<summary>tl;dr: We are happy to announce version 0.1 of the tus resumable uploadprotocol and are interested in yourfeedback!</summary>
+</entry>
+<entry>
+<title>Hello world</title>
+<link href="http://tus.io/blog/2013/04/06/hello-world" rel="alternate" type="text/html" title="Hello world" />
+<published>2013-04-06T22:45:00+02:00</published>
+<updated>2013-04-06T22:45:00+02:00</updated>
+<id>http://tus.io/blog/2013/04/06/hello-world</id>
+<content type="html" xml:base="http://tus.io/blog/2013/04/06/hello-world">&lt;p&gt;Hey everybody, we’re starting a new blog here to discuss file uploading, and
+the protocol we are working on. So keep an eye on this space!&lt;/p&gt;
+</content>
+<author>
+<name>kvz</name>
+</author>
+<summary>Hey everybody, we&amp;#8217;re starting a new blog here to discuss file uploading, andthe protocol we are working on. So keep an eye on this space!</summary>
+</entry>
+</feed>
